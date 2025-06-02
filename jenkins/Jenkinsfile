@@ -2,14 +2,14 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = 'yourusername/gitops-java-app'
+        DOCKER_IMAGE = 'riya61018/gitops-java-app'
         DOCKER_CREDS = credentials('docker-hub-creds')
     }
 
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/YOUR_USERNAME/gitops-devops-project.git'
+                git credentialsId: 'github-creds', url: 'https://github.com/Riya61018/gitops-devops-project.git'
             }
         }
 
